@@ -1,5 +1,4 @@
 from crypt import methods
-import fileinput
 from fileinput import filename
 
 from flask import Flask, request, jsonify, render_template
