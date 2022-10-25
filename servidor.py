@@ -49,6 +49,16 @@ def modeloFile():
         print(line)
     return jsonify({"Resultado": "datos recibidos archivo"})
 
+# Para probar con Postman
+
+
+@servidorWeb.route('/modelo', methods=["POST"])
+def model():
+    # Procesar datos de entrada (request)
+    contenido = request.json
+    print(contenido)
+    return jsonify({"Resultado": "datos recibidos Postman"})
+
 
 if __name__ == '__main__':
     servidorWeb.run(debug=False, host='0.0.0.0', port='8080')
