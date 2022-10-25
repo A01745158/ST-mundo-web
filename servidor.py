@@ -10,7 +10,7 @@ import numpy as np
 import os
 
 # Cargar el modelo
-dt = load('modelo.joblil')
+dt = load('modelo.joblib')
 
 # Generar el servidor en Flask (Back-end)
 
