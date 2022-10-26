@@ -59,8 +59,7 @@ def modeloFile():
     palabras = []
     # while file.isalnum():
     for line in file:
-        if (line.isalphanum() == True):
-            palabras.extend(line.split())
+        palabras.append(float(line[:-1]))
     print(palabras)
     return jsonify({"Resultado": "datos recibidos archivo"})
 
