@@ -56,12 +56,14 @@ def modeloFile():
     path = os.path.join(os.getcwd(), filename)
     f.save(path)
     file = open(path, 'r')
-    palabras = []
+    datos = []
     # while file.isalnum():
     for line in file:
-        palabras.append(float(line[:-1]))
-    print(palabras)
-    return jsonify({"Resultado": "datos recibidos archivo"})
+        datos.append(float(line[:-1]))
+    print(datos)
+    datosEntrada = np.array(datos)
+    resultado = dt.predict(datosEntrada.reshape(1, -1))
+    return jsonify({"Resultado": str(resultado[0])})
 
 # Para probar con Postman
 
