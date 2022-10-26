@@ -55,10 +55,10 @@ def modeloFile():
     path = os.path.join(os.getcwd(), filename)
     f.save(path)
     file = open(path, 'r')
-
+    palabras = []
     for line in file:
-        for palabra in line:
-            print(palabra)
+        palabras.extend(line.split())
+        print(palabras)
     return jsonify({"Resultado": "datos recibidos archivo"})
 
 # Para probar con Postman
