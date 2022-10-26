@@ -1,4 +1,5 @@
 from crypt import methods
+from curses.ascii import isalnum
 from fileinput import filename
 
 from flask import Flask, request, jsonify, render_template
@@ -56,9 +57,10 @@ def modeloFile():
     f.save(path)
     file = open(path, 'r')
     palabras = []
+    # while file.isalnum():
     for line in file:
         palabras.extend(line.split())
-        print(palabras)
+    print(palabras)
     return jsonify({"Resultado": "datos recibidos archivo"})
 
 # Para probar con Postman
