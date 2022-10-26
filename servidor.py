@@ -41,7 +41,7 @@ def modeloForm():
 
     # Usar el modelo
     resultado = dt.predict(datosEntrada.reshape(1, -1))
-    
+
     return jsonify({"Resultado": str(resultado[0])})
 
 # Procesar datos de un archivo
@@ -57,7 +57,8 @@ def modeloFile():
     file = open(path, 'r')
 
     for line in file:
-        print(line)
+        for palabra in file:
+            print(palabra)
     return jsonify({"Resultado": "datos recibidos archivo"})
 
 # Para probar con Postman
