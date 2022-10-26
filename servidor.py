@@ -57,7 +57,7 @@ def modeloFile():
     file = open(path, 'r')
 
     for line in file:
-        for palabra in file:
+        for palabra in line:
             print(palabra)
     return jsonify({"Resultado": "datos recibidos archivo"})
 
